@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
-import CreatePost from './components/CreatePost';
+
 import EditPost from './components/EditPost';
 import DeletePost from './components/DeletePost';
 import Pagination from './components/Pagination';
+import CreatePost from './components/CreatePost';
 
+import './App.css';
 function App() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,8 +47,8 @@ function App() {
   }, []);
 
   const addPost = (newPost) => {
-    let addNewPost = posts.push(newPost);
-    setPosts([...posts, addNewPost]);
+    posts.push(newPost);
+    setPosts([...posts]);
   };
 
   const updatePost = (updatedPost) => {

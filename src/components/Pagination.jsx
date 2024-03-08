@@ -27,4 +27,4 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, nextPage, prevPage, cu
     </nav>
   );
 };
-export default Pagination
+export default Pagination;

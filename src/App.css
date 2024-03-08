@@ -1,46 +1,78 @@
 /* App.css */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+
+.App {
+  font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
 }
 
-
-
-/* CreatePost.css */
-.form-container {
+h1 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.input-group {
+.post {
+  background-color: #1288cc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post h3 {
   margin-bottom: 10px;
 }
 
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
+.post p {
+  margin-bottom: 15px;
 }
 
-.input-group input[type="text"], .input-group textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.input-group input[type="submit"] {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
+/* Delete button */
+.delete-btn {
+  background-color: #ff6347; /* Red color */
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Edit button */
+button.edit-btn{
+  background-color: #09acc9; /* Blue color */
+}
+
+button.edit-btn:hover {
+  background-color: #11b944; /* Darker blue on hover */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Pagination buttons */
+.page-link {
+  color: #0090e4;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: 1px solid #00438b;
   border-radius: 5px;
+  background-color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.input-group input[type="submit"]:hover {
-  background-color: #45a049;
+.page-link:hover {
+  background-color: #f0f0f0;
 }
-

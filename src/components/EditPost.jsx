@@ -10,8 +10,8 @@ const EditPost = ({ post, updatePost }) => {
     e.preventDefault();
     try {
       const updatedPost = { ...post, title, body };
-      const res = await axios.put(`https://jsonplaceholder.typicode.com/posts/${post.id}`, updatedPost);
-      updatePost(res.data); // Update post in local state
+      const res = await axios.patch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, updatedPost);
+      updatePost(res.data);
     } catch (error) {
       console.error('Error updating post:', error);
     }

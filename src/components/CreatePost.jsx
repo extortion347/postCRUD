@@ -3,28 +3,31 @@ import axios from 'axios';
 import { gsap } from 'gsap';
 import '../components/css/CreatePost.css';
 
-const CreatePost = ({ addPost }) => {
+const CreatePost = ({ addPost, userID }) => { // Destructure userID from props
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let userId = 1;
-    const newPost = { title, body, userId }; // Include userID in the new post object
-    const res = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
-    addPost(res.data);
-    setTitle('');
+    try{
+      let userId = 11;
+     
+      const newPost = { title, body, userId };
+      const res = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
+      addPost(res.data);
+    }
+    catch(error){
+      console.log(error)
+    }
+   setTitle('');
     setBody('');
   };
   
 
-  // Animation function using GSAP
-  const animateForm = () => {
-    gsap.from('.create-post-form', { opacity: 0, y: -50, duration: 0.5, ease: 'power3.out' });
-  };
+  
 
   return (
-    <div className="create-post" onLoad={animateForm}>
+    <div className="create-post" >
       <h2 className="create-post-title">Add Post</h2>
       <form className="create-post-form" onSubmit={handleSubmit}>
         <div className="form-group">

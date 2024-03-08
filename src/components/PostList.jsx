@@ -4,9 +4,8 @@ import EditPost from './EditPost';
 import './css/PostList.css';
 
 const generateRandomColor = () => {
-  const colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D'];
-  const availableColors = colors.filter(color => color !== '#ffc107' && color !== '#dc3545'); // Exclude yellow and red colors
-  return availableColors[Math.floor(Math.random() * availableColors.length)];
+  const lightColors = ['#E0FFFF', '#F0FFF0', '#FAFAD2', '#FFE4E1', '#FFDAB9', '#F0FFFF', '#F5F5DC', '#FFEBCD', '#FFFACD', '#F0F8FF'];
+  return lightColors[Math.floor(Math.random() * lightColors.length)];
 };
 
 const PostList = ({ posts, loading, deletePost, updatePost }) => {
@@ -35,19 +34,8 @@ const PostList = ({ posts, loading, deletePost, updatePost }) => {
               <h4>{post.title}</h4>
               <p>{post.body}</p>
               <div className="btn-container">
-                <button
-                  className="edit-btn"
-                 
-                  onClick={() => handleEditClick(post.id)}
-                >
-                  Edit
-                </button>
-                <DeletePost
-                  className="delete-btn "
-                  id={post.id}
-                  deletePost={deletePost}
-                 
-                />
+                <button className="edit-btn" onClick={() => handleEditClick(post.id)}>Edit</button>
+                <DeletePost id={post.id} deletePost={deletePost} />
               </div>
             </div>
           )}
