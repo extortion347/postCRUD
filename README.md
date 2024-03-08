@@ -9,4 +9,4 @@ In the project directory, you can run:
 
 
 
-the api cannot be edit or perform CRUD on realtime data. so this implementation is all done locally...all the CRUD operations...you will find many files...i just broke the code into little chunks so that everthing could clear...
+the api cannot be edit or perform CRUD on realtime data. so this implementation is all done locally...all the CRUD operations...you will find many files...i just broke the code into little chunks so that everthing could clear...and after downloading it install node modules in my-react-app

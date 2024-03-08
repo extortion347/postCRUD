@@ -1,5 +1,6 @@
 /* App.css */
 
+/* Default styles */
 .App {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -75,4 +76,48 @@ button.edit-btn:hover {
 
 .page-link:hover {
   background-color: #f0f0f0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .post {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .post h3 {
+    font-size: 18px;
+  }
+
+  .post p {
+    font-size: 14px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button.edit-btn,
+  .delete-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagination .page-link {
+    margin: 5px;
+  }
 }
