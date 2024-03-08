@@ -1,7 +1,6 @@
-import React from 'react';
-import '../components/css/Pagination.css';
+import './css/Pagination.css';
 
-const Pagination = ({ postsPerPage, totalPosts, currentPage, paginate }) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate, nextPage, prevPage, currentPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -9,18 +8,23 @@ const Pagination = ({ postsPerPage, totalPosts, currentPage, paginate }) => {
   }
 
   return (
-    <nav className='pagination'>
-      <ul className='page-list'>
+    <nav>
+      <ul className='pagination'>
+        <li className='page-item'>
+          <button onClick={prevPage} className='page-link' disabled={currentPage === 1}>Previous</button>
+        </li>
         {pageNumbers.map(number => (
-          <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
-            <a onClick={() => paginate(number)} href='!#' className='page-link'>
+          <li key={number} className='page-item'>
+            <button onClick={() => paginate(number)} className={`page-link ${currentPage === number ? 'active' : ''}`}>
               {number}
-            </a>
+            </button>
           </li>
         ))}
+        <li className='page-item'>
+          <button onClick={nextPage} className='page-link' disabled={currentPage === Math.ceil(totalPosts / postsPerPage)}>Next</button>
+        </li>
       </ul>
     </nav>
   );
 };
-
-export default Pagination;
+export default Pagination

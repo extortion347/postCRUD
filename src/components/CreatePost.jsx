@@ -9,12 +9,14 @@ const CreatePost = ({ addPost }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newPost = { title, body };
+    let userId = 1;
+    const newPost = { title, body, userId }; // Include userID in the new post object
     const res = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
     addPost(res.data);
     setTitle('');
     setBody('');
   };
+  
 
   // Animation function using GSAP
   const animateForm = () => {

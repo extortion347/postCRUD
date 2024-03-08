@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import '../components/css/EditPost.css';
 
 const EditPost = ({ post, updatePost }) => {
@@ -43,11 +42,6 @@ const EditPost = ({ post, updatePost }) => {
       </form>
     </div>
   );
-};
-
-EditPost.propTypes = {
-  post: PropTypes.object.isRequired,
-  updatePost: PropTypes.func.isRequired,
 };
 
 export default EditPost;
